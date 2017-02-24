@@ -1,9 +1,3 @@
----
-output: 
-  html_document: 
-    fig_caption: yes
----
-
 # Word Predictor
 
 A Word Prediction Algorithm based on Stupid Backoff N-gram Model built within the partnership of Johns Hopkins with SwiftKey, the leading company on predictive text input for Android and iOS keyboards, to fulfil the Johns Hopkins Data Science Specialization Capstone Project requirements.
