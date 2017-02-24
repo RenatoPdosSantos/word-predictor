@@ -34,7 +34,7 @@ The following R packages were used for the data cleaning and analysis:
 - *RWeka*, for machine learning algorithms for data mining
 
 # Highlights
-- **Speed**: The probabilities were all previously computed and are loaded before execution. The app looks down the word tables to instantly recover the most likely next word.
+- **Speed**: The probabilities were all previously computed and are loaded before execution. The app searches through millions of words down the tables to instantly recover the most likely next word.
 
 - **Versatility**: The algorithm handles many contractions used in Internet language: e.g. "I'll b there 2day"  will be translated as "i will be there today."
 
@@ -54,16 +54,16 @@ For this project it was developed:
 This repository (see below) contains all the files necessary to satisfy the project requirements.
 
 # Repository Files
-- **createTables.Rmd**: this file contains the code that takes the raw data and creates the 1-, 2-, 3-, and 4-gram probability tables .RData files, using the "Stupid Backoff" smoothing
-- **profanitywords.RData**: a list of profanity words to remove used by the **prepareText.R** code, based on the list of profanity words obtained from the [Shutterstock repo](http://github.com/shutterstock/List-of-Dirty-Naughty-Obscene-and-Otherwise-Bad-Words). 
-- **unigramFreq.RData**, etc.: the four 1-, 2-, 3-, and 4-gram probability tables files created by the **createTables.Rmd** code
-- **global.R**: loads the lookup tables to search for matches, as well as additional libraries and functions
-- **prepareText.R**: this is the main function called both by **createTables.Rmd** to clean the raw data and by **server.R** to clean the user input for the application interface
-- **predictWord.R**: this is the function that predicts the next word and returns it to the user interface
-- **server.R**: code necessary to access user input, calls functions necessary to clean the input, predict the next word, and return it to the user interface 
 - **ui.R**: code necessary for the application interface
 	+ Input: Text box that accepts a phrase 
 	+ Output: The phrase as interpreted by the algorithm, and the predicted word
+- **server.R**: code necessary to access user input, calls functions necessary to clean the input, predict the next word, and return it to the user interface 
+- **global.R**: loads the lookup tables, as well as additional libraries and functions
+- **unigramFreq.RData**, etc.: the four 1-, 2-, 3-, and 4-gram probability tables files created by the **createTables.Rmd** code
+- **profanitywords.RData**: a list of profanity words to remove used by the **prepareText.R** code, based on the list of profanity words obtained from the [Shutterstock repo](http://github.com/shutterstock/List-of-Dirty-Naughty-Obscene-and-Otherwise-Bad-Words). 
+- **createTables.Rmd**: this file contains the code that takes the raw data and creates the 1-, 2-, 3-, and 4-gram probability tables .RData files, using the "Stupid Backoff" smoothing
+- **prepareText.R**: this is the main function called both by **createTables.Rmd** to clean the raw data and by **server.R** to clean the user input for the application interface
+- **predictWord.R**: this is the function that searches through millions of words in the lookup tables and predicts the next word and returns it to the user interface
 
 
 # Shiny interface app 
