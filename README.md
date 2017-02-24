@@ -29,7 +29,7 @@ The following R packages were used for the data cleaning and analysis:
 
 - *tm*, for text mining,
 - *knitr*, for report generation (including nice tables),
-- *ggplot2*, for graphs, and
+- *stringr*, for text manipulation, and
 - *RWeka*, for machine learning algorithms for data mining
 
 ### Highlights
@@ -46,7 +46,7 @@ The goal of this project is to create a product to highlight the prediction algo
 
 For this project it was built:
 
-1. A R program to create the $1$-, $2$-, $3$-, and $4$-gram probability tables .RData files, using the "Stupid Backoff" smoothing.
+1. A R program to create the *1-*, *2-*, *3-*, and *4-gram* probability tables .RData files, using the "Stupid Backoff" smoothing.
 2. A Shiny app that takes as input a phrase (multiple words) in a text box input and outputs a prediction of the next word.
 3. A R Studio Presenter slide deck consisting of no more than 5 slides pitching the algorithm and app as if it were being presenting to a boss or an investor.
 
@@ -76,7 +76,7 @@ If the user provides random text to this prediction algorithm "awpu1iub325  i139
 
 ### Calculating Probability Scores
 
-The idea here is the algorithm to find the word $w$, out of all possible candidate words, that maximizes the probability that it is the intended next word, given the original sentence $s$, or
+The idea here is the algorithm to find the word *w*, out of all possible candidate words, that maximizes the probability that it is the intended next word, given the original sentence $s$, or
 
 $$argmax_{w\ \in\ candidates} P(w|s)$$.
 
